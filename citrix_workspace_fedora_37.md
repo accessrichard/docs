@@ -2,7 +2,9 @@
 
 ### Install Citrix Workspace
 *  Download the Citrix [Receiver for Linux (x86_64)](https://www.citrix.com/downloads/citrix-receiver/linux/receiver-for-linux-latest.html)
- - I did not install the citrix usb package since audio and microphone should be redirected by default.
+
+
+   - I did not install the citrix usb package since audio and microphone should be redirected by default.
 
 ```
 dnf install ~/Downloads/<<citrixfilename.rpm>>
@@ -10,16 +12,17 @@ dnf install ~/Downloads/<<citrixfilename.rpm>>
 ### Install Certificate
 
 * Go to your company's workspace site and download the root certificate. 
- - In Firefox click the padlock icon to the left of the url, then "Connection is Secure" then "More Information"
- - Hit View Certificate
- - In the Miscellaneous section of the first/root certificate click PEM download.
- - Copy that pem file to the following folder: /opt/Citrix/ICAClient/keystore/cacerts/ 
- - Run /opt/Citrix/ICAClient/util/ctx_rehash 
- - Official instructions are [here](https://support.citrix.com/article/CTX231524/citrix-workspace-app-for-linux-how-to-trust-a-ca-certificate)
+
+  - In Firefox click the padlock icon to the left of the url, then "Connection is Secure" then "More Information"
+  - Hit View Certificate
+  - In the Miscellaneous section of the first/root certificate click PEM download.
+  - Copy that pem file to the following folder: /opt/Citrix/ICAClient/keystore/cacerts/ 
+  - Run /opt/Citrix/ICAClient/util/ctx_rehash 
+  - Official instructions are [here](https://support.citrix.com/article/CTX231524/citrix-workspace-app-for-linux-how-to-trust-a-ca-certificate)
 
 ### Fix Audio Not Working Due To Fedora Switching to Pipewire - Use Pipewire Pulseaudio Compatability Layer
 
-*  (IF you login and audio is broken) Citrix doesn't support pipewire which Fedora 37 swapped to. In order to fake out citrix so it works with pipewire, in usr/bin make a file called pulseaudio and place the following in it:
+*  **IF you login and audio is broken**... Citrix as of this time...doesn't support pipewire which Fedora 37 swapped to. In order to fake out citrix so it works with pipewire, in usr/bin make a file called pulseaudio and place the following in it:
 ```
 sudo nano /usr/bin/pulseaudio 
 ```
@@ -41,7 +44,7 @@ This is because citrix only supports pulseaudio and not pipewire. Pipewire has a
 * If faking out pulseaudio (instructions above) does not work or you have issues with pipewire:
 [You can run the following](https://discussion.fedoraproject.org/t/how-do-i-switch-from-pulseaudio-to-pipewire-and-back/78093) to swap back from pipewire to pulseaudio. 
 
-You have to run the second command on user profile startup. **That is every time you log into Gnome**:
+Note: You have to run the second command on user profile startup. **That is every time you log into Gnome**:
 ```
 sudo dnf swap --allowerasing pulseaudio pipewire-pulseaudio
 systemctl --user --now disable wireplumber
