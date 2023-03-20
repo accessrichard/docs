@@ -1,4 +1,4 @@
-### Getting Citrix Workspace working on Fedora 37 with Pipewire under Wayland
+### Getting Citrix Workspace working on Fedora 37 with Pipewire
 
 ### Install Citrix Workspace
 *  Download the Citrix [Receiver for Linux (x86_64)](https://www.citrix.com/downloads/citrix-receiver/linux/receiver-for-linux-latest.html)
@@ -99,3 +99,5 @@ EnableEchoCancellation=TRUE ;enable
 PlaybackDelayThreshV4=100 ; you can leave this at the default of 50 if you want.
 AudioTempLatencyBoostV4=175 ;you can leave this at the default of 100  if you want.
 ```
+
+
