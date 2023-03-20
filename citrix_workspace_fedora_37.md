@@ -58,6 +58,7 @@ gsettings set org.gnome.mutter.wayland xwayland-allow-grabs true
 ```
 
 ### Fix DPI Scaling for 4k screens when logging in, Choppy Audio, and Invisible Mouse Issues
+### Reference: [Citrix Linux Config Docs](https://docs.citrix.com/en-us/citrix-workspace-app-for-linux/configure-xenapp.html)
 
 In your profile directory:
 
