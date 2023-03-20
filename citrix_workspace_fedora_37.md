@@ -36,10 +36,12 @@ chmod +x /usr/bin/pulseaudio
 
 This is because citrix only supports pulseaudio and not pipewire. Pipewire has a compatability layer pipewire-pulseaudio that will work however the citrix client does not detect this.
 
-### Fix Audio Not Working By Swapping Back To PulseAudio
+### Fix Audio Not Working By Swapping Back To PulseAudio 
 
-* If faking out pulseaudio doesnt work or you have issues with pipewire ONLY:
-[Alternatively](https://discussion.fedoraproject.org/t/how-do-i-switch-from-pulseaudio-to-pipewire-and-back/78093) you can run the following to swap back from pipewire to pulseaudio. You have to run the second command on user profile startup. That is every time you log into Gnome:
+* If faking out pulseaudio (instructions above) does not work or you have issues with pipewire:
+[You can run the following](https://discussion.fedoraproject.org/t/how-do-i-switch-from-pulseaudio-to-pipewire-and-back/78093) to swap back from pipewire to pulseaudio. 
+
+You have to run the second command on user profile startup. **That is every time you log into Gnome**:
 ```
 sudo dnf swap --allowerasing pulseaudio pipewire-pulseaudio
 systemctl --user --now disable wireplumber
