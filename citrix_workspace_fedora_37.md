@@ -107,3 +107,10 @@ AudioTempLatencyBoostV4=175 ;you can leave this at the default of 100  if you wa
 ```
 
 
+### Possibly Disable Unidirect Fullscreen Windows 
+
+Install gnome extension "Disable Unidirect Fullscreen Windows" and turn it on.
+
+I don't know if this setting does anything anymore....it was for screen tearing.
+
+
